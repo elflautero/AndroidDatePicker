@@ -1,11 +1,26 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center">
-
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-</LinearLayout>
+	<!--https://www.youtube.com/watch?v=33BFCdL0Di0-->
+	<TextView
+		android:id="@+id/mainTextViewDatePublication"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="date"
+		android:textSize="30sp"
+		android:layout_above="@+id/mainButtonDatePublication"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="28dp"
+		/>
+	
+    <Button
+		android:id="@+id/mainButtonDatePublication"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Open Date Picker"
+		android:layout_centerVertical="true"
+		android:layout_centerHorizontal="true"
+		/>
+		
+</RelativeLayout>
