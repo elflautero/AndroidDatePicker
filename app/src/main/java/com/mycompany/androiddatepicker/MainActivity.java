@@ -22,8 +22,9 @@ public class MainActivity
 	extends Activity 
 	implements DatePickerDialog.OnDateSetListener {
 	
-	/* 	somente para testes, criei o button como variavel global e chamei ele
-			dentro do metodo on create 
+	/* 	somente para testes, criei o button como
+			variavel global e chamei ele
+				dentro do metodo on create 
 	*/
 	Button button;
 		
@@ -32,15 +33,23 @@ public class MainActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 		
-		button = (Button) findViewById(R.id.mainButtonDatePublication);
+		button = (Button) findViewById(
+			R.id.mainButtonDatePublication);
 
-		button.setOnClickListener(new View.OnClickListener() {
+		button.setOnClickListener(
+		
+			new View.OnClickListener() {
 
 				public void onClick(View v) {
 
-					DialogFragment datePicker = new DatePickerFragment();
-					datePicker.show(getFragmentManager(),"datePicker");
-					// mudei o getSupporFragmentManager para getFragmentManager
+					DialogFragment datePicker =
+						new DatePickerFragment();
+					datePicker.show(
+						getFragmentManager(),
+						"datePicker");
+					/* mudei o getSupporFragmentManage
+							para getFragmentManage
+							*/
 				}		
 			});
 		
@@ -48,16 +57,22 @@ public class MainActivity
 	}// fim mainActivity
 
 	@Override
-	public void onDateSet (DatePicker view, int year, int month, int dayOfMonth) {
+	public void onDateSet (
+			DatePicker view,
+			int year,
+			int month,
+			int dayOfMonth) {
 		
 		Calendar c = Calendar.getInstance();
 		c.set(Calendar.YEAR, year);
 		c.set(Calendar.MONTH, month);
 		c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
-		String currentDateString = DateFormat.getInstance().format(c.getTime());
+		String currentDateString =
+			DateFormat.getInstance().format(c.getTime());
 									//colocar DateFormat.FULL
-		TextView textView = (TextView) findViewById(R.id.mainTextViewDatePublication);
+		TextView textView = (TextView) findViewById(
+			R.id.mainTextViewDatePublication);
 
 		textView.setText(currentDateString);
 		
